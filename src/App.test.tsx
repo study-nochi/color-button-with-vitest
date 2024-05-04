@@ -33,4 +33,12 @@ test("checkbox flow", () => {
   // check initial conditions
   expect(buttonElement).toBeEnabled();
   expect(checkboxElement).not.toBeChecked();
+
+  // click checkbox to disable button
+  fireEvent.click(checkboxElement);
+  expect(buttonElement).toBeDisabled();
+
+  // click checkbox again to re-enable button
+  fireEvent.click(checkboxElement);
+  expect(buttonElement).toBeEnabled();
 });
